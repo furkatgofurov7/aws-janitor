@@ -19,7 +19,7 @@ inputs:
     default: 'janitor-ignore'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/rancher-sandbox/aws-janitor:v0.1.0'
+  image: 'docker://ghcr.io/furkatgofurov7/aws-janitor:v0.1.0'
 branding:
   icon: 'delete'
   color: 'blue'

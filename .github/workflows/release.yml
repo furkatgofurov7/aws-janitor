@@ -8,6 +8,7 @@ on:
 env:
   TAG: ${{ github.ref_name }}
   REGISTRY: ghcr.io
+  ORG: furkatgofurov7
 
 permissions:
   contents: write # Allow to create a release.
@@ -34,9 +35,9 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build docker image
-      run: make docker-build-all TAG=${{ env.TAG }}
+      run: make docker-build-all TAG=${{ env.TAG }} ORG=${{ env.ORG }}
     - name: Push docker image
-      run: make docker-push-all TAG=${{ env.TAG }}
+      run: make docker-push-all TAG=${{ env.TAG }} ORG=${{ env.ORG }}
   release:
     name: Create draft release
     needs: build
